@@ -6,7 +6,7 @@ type result struct {
 	Ret          interface{} `json:"ret"`
 }
 
-func Success(data interface{}) (ret interface{}) {
+func Success(data interface{}) (ret result) {
 	ret = result{ErrorMessage: "ok", Ret: data}
 	return ret
 }
