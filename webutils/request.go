@@ -3,7 +3,6 @@ package webutils
 import (
 	"bytes"
 	"errors"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -102,7 +101,6 @@ func CaptureMulti(query []Query, timeout time.Duration) (feedbacks []Feedback) {
 	for _, q := range query {
 		go func(httpclient *http.Client, query Query) {
 			defer wg.Done()
-			fmt.Println("send request")
 			feedback := doRequest(httpclient, query)
 			feedbackchan <- feedback
 		}(httpclient, q)
