@@ -104,7 +104,6 @@ func CaptureMulti(query []Query, timeout time.Duration) (feedbacks []Feedback) {
 			defer wg.Done()
 			fmt.Println("send request")
 			feedback := doRequest(httpclient, query)
-			// fmt.Println(feedback)
 			feedbackchan <- feedback
 		}(httpclient, q)
 	}
