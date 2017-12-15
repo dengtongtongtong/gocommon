@@ -113,3 +113,7 @@ func CaptureMulti(query []Query, timeout time.Duration) (feedbacks []Feedback) {
 	wg.Wait()
 	return feedbacks
 }
+
+func AsyncCaptureSingle(query Query, timeout time.Duration) {
+
+}
