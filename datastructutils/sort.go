@@ -14,7 +14,7 @@ func SortMapByStringKey(unsortedmap map[string]interface{}) (sortedmap []interfa
 	}
 	sort.Strings(keys)
 	for _, k := range keys {
-		sortedmap = append(sortedmap, k)
+		sortedmap = append(sortedmap, map[string]interface{}{k: unsortedmap[k]})
 	}
 	return sortedmap, nil
 }
